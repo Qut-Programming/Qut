@@ -1,0 +1,7 @@
+\\no way a second test file
+set yes\"4"
+set no\"60"
+div no\yes
+pow no\yes
+set maybe\"27"
+mod maybe\yes

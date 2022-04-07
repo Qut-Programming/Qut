@@ -1,0 +1,20 @@
+{
+  "name": "qut",
+  "version": "1.0.0",
+  "description": "Programming language made in JS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "javascript",
+    "qut",
+    "programming",
+    "code"
+  ],
+  "author": "jwklong",
+  "license": "ISC",
+  "dependencies": {
+    "fs": "^0.0.1-security"
+  }
+}
