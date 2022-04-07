@@ -1,7 +1,7 @@
 {
   "name": "qut",
   "version": "1.0.0",
-  "description": "Programming language made in JS",
+  "description": "A programming language built in JS",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
