@@ -8,4 +8,5 @@ sleep "1000"
 set hmm\"wow"
 import "./built-in/test2.qut"
 add hmm\"wow"
-resetvars
+resetvar yes
+add yes\no

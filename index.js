@@ -33,8 +33,13 @@ function main(filename) {
                     value2 = value2.substring(1, value2.length - 2)
                 }
                 variables[value1] = value2
-            } else if (command == "resetvars") {
-                variables = {}
+            } else if (command == "resetvar") {
+                var value = data.substring(9)
+                console.log(value)
+                if (variables[value]) {
+                    variables[value] = undefined
+                    console.log(variables)
+                }
             } else if (command == "add") {
                 const values = data.substring(4).split("\\")
                 var value1 = values[0]
