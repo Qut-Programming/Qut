@@ -155,7 +155,7 @@ function main(filename) {
                 }
                 main(value)
             } else {
-                console.warn("Invalid Command!")
+                console.warn("Invalid Command! (Line "+line+")")
             }
         }
     }
