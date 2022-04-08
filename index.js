@@ -1,3 +1,5 @@
+console.log(`Qut v1.0.1.1\nA programming language built in JS\n`)
+
 const fs = require('fs')
 const functions = require('./functions.js')
 
@@ -37,8 +39,12 @@ function main(filename) {
                 console.warn(`'resetvar' is deprecated and will be removed in a future release! (Line ${line}, File '${filename}')`)
                 var value = data.substring(9)
                 if (variables[value.substring(0, value.length - 1)]) {
-                    variables["!before"] = variables[value.substring(0, value.length - 1)]
-                    variables[value.substring(0, value.length - 1)] = undefined
+                    if (!value.substring(0, value.length - 1).startsWith("!")) {
+                        variables["!before"] = variables[value.substring(0, value.length - 1)]
+                        variables[value.substring(0, value.length - 1)] = undefined
+                    } else {
+                        console.warn(`You are not allowed to reset Important Variables! (Line ${line}, File '${filename}')`)
+                    }
                 }
             } else if (command == "add") {
                 const values = data.substring(4).split("\\")
