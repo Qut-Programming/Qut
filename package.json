@@ -1,6 +1,6 @@
 {
   "name": "qut",
-  "version": "1.0.0",
+  "version": "1.0.0.2",
   "description": "A programming language built in JS",
   "main": "index.js",
   "scripts": {

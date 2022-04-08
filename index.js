@@ -32,7 +32,11 @@ function main(filename) {
                 } else {
                     value2 = value2.substring(1, value2.length - 2)
                 }
-                variables[value1] = value2
+                if (!value1.startsWith("!")) {
+                    variables[value1] = value2
+                } else {
+                    console.warn("You are not allowed to set Important Variables!")
+                }
             } else if (command == "resetvar") {
                 var value = data.substring(9)
                 console.log(value)
