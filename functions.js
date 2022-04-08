@@ -17,4 +17,11 @@ module.exports = {
         }
         return true
     },
+    setVar: function (variables, value, offset) {
+        if (this.isVar(value.substring(0, value.length - offset))) {
+            return variables[value.substring(0, value.length - offset)]
+        } else {
+            return value.substring(1, value.length - (offset+1))
+        }
+    }
 };

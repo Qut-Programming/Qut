@@ -2,6 +2,9 @@
 set yes\"4"
 set no\"60"
 div no\yes
+print !before
 pow no\yes
+print !before
 set maybe\"27"
 mod maybe\yes
+print !before

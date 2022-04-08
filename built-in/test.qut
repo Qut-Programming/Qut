@@ -1,12 +1,20 @@
 \\testing commands n stuff
+goto "5"
+
+
 set yes\"4"
 set no\"60"
 add yes\no
+print !before
 sub no\yes
+print !before
 mul yes\no
+print !before
 sleep "1000"
 set hmm\"wow"
 run "./built-in/test2.qut"
 add hmm\"wow"
+print !before
 resetvar yes
 add yes\no
+print !before
