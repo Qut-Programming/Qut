@@ -7,7 +7,7 @@ function main(filename) {
     try {
         file = fs.readFileSync(filename, 'utf8')
     } catch (err) {
-        console.error(err)
+        console.error("File does not exist / is corrupted")
     }
 
     var variables = {}
@@ -146,8 +146,8 @@ function main(filename) {
                 do {
                     currentDate = Date.now();
                 } while (currentDate - date < parseInt(value));
-            } else if (command == "import") {
-                var value = data.substring(7)
+            } else if (command == "run") {
+                var value = data.substring(4)
                 if (functions.isVar(value.substring(0, value.length - 1))) {
                     value = variables[value.substring(0, value.length - 1)]
                 } else {
