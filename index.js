@@ -1,9 +1,11 @@
-console.log(`Qut v1.0.1.1\nA programming language built in JS\n`)
+console.log(`Qut v1.0.2\nA programming language built in JS\n`)
 
 const fs = require('fs')
+const prompt = require('prompt-sync')({sigint: true});
 const functions = require('./functions.js')
 
 function main(filename) {
+    console.log("\n")
     var file = false
 
     try {
@@ -34,17 +36,6 @@ function main(filename) {
                     variables["!before"] = value2
                 } else {
                     console.warn(`You are not allowed to set Important Variables! (Line ${line}, File '${filename}')`)
-                }
-            } else if (command == "resetvar") {
-                console.warn(`'resetvar' is deprecated and will be removed in a future release! (Line ${line}, File '${filename}')`)
-                var value = data.substring(9)
-                if (variables[value.substring(0, value.length - 1)]) {
-                    if (!value.substring(0, value.length - 1).startsWith("!")) {
-                        variables["!before"] = variables[value.substring(0, value.length - 1)]
-                        variables[value.substring(0, value.length - 1)] = undefined
-                    } else {
-                        console.warn(`You are not allowed to reset Important Variables! (Line ${line}, File '${filename}')`)
-                    }
                 }
             } else if (command == "add") {
                 const values = data.substring(4).split("\\")
@@ -112,6 +103,12 @@ function main(filename) {
                 variables["!pastline"] = line
                 line = parseInt(value)-1
                 variables["!before"] = parseInt(value)
+            } else if (command == "ask") {
+                var value = data.substring(4)
+                value = functions.setVar(variables, value, 1)
+                const answer = prompt(`${value} `)
+                variables["!before"] = answer
+            
             } else {
                 console.warn(`Invalid Command! (Line ${line}, File '${filename}')`)
             }
@@ -119,4 +116,13 @@ function main(filename) {
     }
 }
 
-main('./built-in/test.qut')
+console.log("Choose a option:\n   1: Run the test file\n   2: Run a different file")
+var answer = prompt("")
+if (answer == 1) {
+    main('./built-in/test.qut')
+} else if (answer == 2) {
+    answer = prompt(`Put location of qut file here: `)
+    main(answer)
+} else {
+    console.error("Invalid option")
+}
