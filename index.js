@@ -6,7 +6,8 @@ function main(filename) {
 
     try {
         var rawFile = new XMLHttpRequest();
-        rawFile.open("GET", filename, false);
+        rawFile.open("GET", filename, true);
+        rawFile.send(null);
         rawFile.onreadystatechange = function () {
             if(rawFile.readyState === 4) {
                 if(rawFile.status === 200 || rawFile.status == 0) {
@@ -14,7 +15,6 @@ function main(filename) {
                 }
             }
         }
-        rawFile.send(null);
     } catch (err) {
         console.error("File does not exist / is corrupted")
     }
