@@ -1,7 +1,5 @@
 console.log(`Qut v1.0.2\nA programming language built in JS\n`)
 
-const fs = require('fs')
-const prompt = require('prompt-sync')({sigint: true});
 const functions = require('./functions.js')
 
 function main(filename) {
@@ -9,7 +7,16 @@ function main(filename) {
     var file = false
 
     try {
-        file = fs.readFileSync(filename, 'utf8')
+        var rawFile = new XMLHttpRequest();
+        rawFile.open("GET", file, false);
+        rawFile.onreadystatechange = function () {
+            if(rawFile.readyState === 4) {
+                if(rawFile.status === 200 || rawFile.status == 0) {
+                    file = rawFile.responseText;
+                }
+            }
+        }
+        rawFile.send(null);
     } catch (err) {
         console.error("File does not exist / is corrupted")
     }
@@ -106,7 +113,7 @@ function main(filename) {
             } else if (command == "ask") {
                 var value = data.substring(4)
                 value = functions.setVar(variables, value, 1)
-                const answer = prompt(`${value} `)
+                const answer = window.prompt(`${value} `)
                 variables["!before"] = answer
             
             } else {
@@ -116,12 +123,12 @@ function main(filename) {
     }
 }
 
-console.log("Choose a option:\n   1: Run the test file\n   2: Run a different file")
-var answer = prompt("")
+alert("Choose a option:\n   1: Run the test file\n   2: Run a different file")
+var answer = window.prompt("")
 if (answer == 1) {
     main('./built-in/test.qut')
 } else if (answer == 2) {
-    answer = prompt(`Put location of qut file here: `)
+    answer = window.prompt(`Put location of qut file here: `)
     main(answer)
 } else {
     console.error("Invalid option")
