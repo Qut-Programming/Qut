@@ -15,6 +15,9 @@ function main(filename) {
                 }
             }
         }
+        while (file == false) {
+            let nothing = "nothing" //wait loop or something idk
+        }
     } catch (err) {
         console.error("File does not exist / is corrupted")
     }
