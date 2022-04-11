@@ -1,4 +1,4 @@
-console.log(`Qut v1.0.2\nA programming language built in JS\n`)
+console.log(`Qut v1.0.2.1\nA programming language built in JS\n`)
 
 function main(filename) {
     console.log("\n")
@@ -62,7 +62,11 @@ function main(filename) {
                 var value2 = values[1]
                 value1 = setVar(variables, value1, 0)
                 value2 = setVar(variables, value2, 1)
-                variables["!before"] = (parseInt(value1) * parseInt(value2))
+                if (isSameType(value1, value2) == 'number') {
+                    variables["!before"] = (parseInt(value1) * parseInt(value2))
+                } else {
+                    variables["!before"] = (value1.repeat(value2))
+                }
             } else if (command == "sub") {
                 const values = data.substring(4).split("\\")
                 var value1 = values[0]
@@ -124,13 +128,13 @@ function main(filename) {
     }
 }
 
-alert("Choose a option:\n   1: Run the test file\n   2: Run a different file")
+alert("Choose a option:\n   1: Run the test file\n   2: Run a different file\n   3: Exit")
 var answer = window.prompt("")
 if (answer == 1) {
-    main('./built-in/test.qut')
+    main('./built-in/scripts/test.qut')
 } else if (answer == 2) {
     answer = window.prompt(`Put location of qut file here: `)
     main(answer)
-} else {
+} else if (answer != 3) {
     console.error("Invalid option")
 }

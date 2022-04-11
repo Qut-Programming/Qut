@@ -12,8 +12,10 @@ mul yes\no
 print !before
 sleep "1000"
 set hmm\"wow"
-run "./built-in/test2.qut"
+run "./built-in/scripts/test2.qut"
 add hmm\"wow"
+print !before
+mul hmm\"4"
 print !before
 ask "Put anything here and I shall print it!"
 print !before
