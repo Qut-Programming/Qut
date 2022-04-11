@@ -2,26 +2,7 @@ console.log(`Qut v1.0.2.1-webtest1\nA programming language built in JS\n`)
 
 function main(filename) {
     console.log("\n")
-    var file = `\\testing commands n stuff
-goto "5"
-
-
-set yes\"4"
-set no\"60"
-add yes\no
-print !before
-sub no\yes
-print !before
-mul yes\no
-print !before
-sleep "1000"
-set hmm\"wow"
-add hmm\"wow"
-print !before
-mul hmm\"4"
-print !before
-ask "Put anything here and I shall print it!"
-print !before`/*var file = false
+    var file = `\\testing commands n stuff\ngoto "5"\n\n\nset yes\"4"\nset no\"60"\nadd yes\no\nprint !before\nsub no\yes\nprint !before\nmul yes\no\nprint !before\nsleep "1000"\nset hmm\"wow"\nadd hmm\"wow"\nprint !before\nmul hmm\"4"\nprint !before\nask "Put anything here and I shall print it!"\nprint !before\n`/*var file = false
 
     try {
         var rawFile = new XMLHttpRequest();
