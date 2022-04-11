@@ -1,8 +1,27 @@
-console.log(`Qut v1.0.2.1\nA programming language built in JS\n`)
+console.log(`Qut v1.0.2.1-webtest1\nA programming language built in JS\n`)
 
 function main(filename) {
     console.log("\n")
-    var file = false
+    var file = `\\testing commands n stuff
+goto "5"
+
+
+set yes\"4"
+set no\"60"
+add yes\no
+print !before
+sub no\yes
+print !before
+mul yes\no
+print !before
+sleep "1000"
+set hmm\"wow"
+add hmm\"wow"
+print !before
+mul hmm\"4"
+print !before
+ask "Put anything here and I shall print it!"
+print !before`/*var file = false
 
     try {
         var rawFile = new XMLHttpRequest();
@@ -20,7 +39,7 @@ function main(filename) {
         }
     } catch (err) {
         console.error("File does not exist / is corrupted")
-    }
+    }*/
 
     var variables = {}
     var line = 0
@@ -132,9 +151,9 @@ alert("Choose a option:\n   1: Run the test file\n   2: Run a different file\n  
 var answer = window.prompt("")
 if (answer == 1) {
     main('./built-in/scripts/test.qut')
-} else if (answer == 2) {
+/*} else if (answer == 2) {
     answer = window.prompt(`Put location of qut file here: `)
-    main(answer)
+    main(answer)*/
 } else if (answer != 3) {
     console.error("Invalid option")
 }
