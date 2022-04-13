@@ -18,6 +18,7 @@ function main(filename) {
     var line = 0
     while (file.split("\n")[line]) {
         ++line
+        variables["!line"] = line
         data = file.split("\n")[line-1]
         if (data && !data.startsWith("\\\\")) {
             const command = data.split(" ")[0];
@@ -104,7 +105,7 @@ function main(filename) {
             } else if (command == "goto") {
                 var value = data.substring(5)
                 value = functions.setVar(variables, value, 1)
-                variables["!pastline"] = line+1
+                variables["!gotoline"] = line+1
                 line = parseInt(value)-1
                 variables["!before"] = parseInt(value)
             } else if (command == "ask") {
