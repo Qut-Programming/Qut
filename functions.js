@@ -12,16 +12,13 @@ module.exports = {
         return 'string'
     },
     isVar: function (value) {
-        if (value.startsWith('"') && value.endsWith('"')) {
-            return false
-        }
-        return true
+        return value.startsWith('v!')
     },
     setVar: function (variables, value, offset) {
         if (this.isVar(value.substring(0, value.length - offset))) {
-            return variables[value.substring(0, value.length - offset)]
+            return variables[value.substring(2, value.length - offset)]
         } else {
-            return value.substring(1, value.length - (offset+1))
+            return value.substring(0, value.length - (offset))
         }
     }
 };

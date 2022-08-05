@@ -113,7 +113,6 @@ function main(filename) {
                 value = functions.setVar(variables, value, 1)
                 const answer = prompt(`${value} `)
                 variables["!before"] = answer
-            
             } else {
                 console.warn(`Invalid Command! (Line ${line}, File '${filename}')`)
             }

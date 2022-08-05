@@ -1,21 +1,21 @@
 \\testing commands n stuff
-goto "5"
+goto 5
 
 
-set yes\"4"
-set no\"60"
-add yes\no
-print !before
-sub no\yes
-print !before
-mul yes\no
-print !before
-sleep "1000"
-set hmm\"wow"
+set yes\4
+set no\60
+add v!yes\v!no
+print v!!before
+sub v!no\v!yes
+print v!!before
+mul v!yes\v!no
+print v!!before
+sleep 1000
+set hmm\wow
 run "./built-in/scripts/test2.qut"
-add hmm\"wow"
-print !before
-mul hmm\"4"
-print !before
-ask "Put anything here and I shall print it!"
-print !before
+add v!hmm\wow
+print v!!before
+mul v!hmm\4
+print v!!before
+ask Put anything here and I shall print it!
+print v!!before

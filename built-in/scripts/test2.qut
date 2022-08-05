@@ -1,10 +1,10 @@
 \\no way a second test file
-set yes\"4"
-set no\"60"
-div no\yes
-print !before
-pow no\yes
-print !before
-set maybe\"27"
-mod maybe\yes
-print !before
+set yes\4
+set no\60
+div v!no\v!yes
+print v!!before
+pow v!no\v!yes
+print v!!before
+set maybe\27
+mod v!maybe\v!yes
+print v!!before
