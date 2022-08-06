@@ -1,7 +1,5 @@
-\\testing commands n stuff
-goto 5
-
-
+goto 3
+print You will never see this!
 set yes\4
 set no\60
 add v!yes\v!no
@@ -12,10 +10,16 @@ mul v!yes\v!no
 print v!!before
 sleep 1000
 set hmm\wow
-run "./built-in/scripts/test2.qut"
+run built-in/scripts/test2.qut
 add v!hmm\wow
 print v!!before
 mul v!hmm\4
 print v!!before
 ask Put anything here and I shall print it!
 print v!!before
+set something\3
+loop 3
+print v!something
+sub v!something\1
+set something\v!!before
+loopend
